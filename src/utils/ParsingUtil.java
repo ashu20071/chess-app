@@ -26,6 +26,20 @@ public class ParsingUtil {
 
     public List<String> parseMoves(List<List<Integer>> moves) {
         List<String> movesList = new ArrayList<>();
-        return null;
+        for (List<Integer> move : moves) {
+            int row = move.get(0);
+            int column = move.get(1);
+
+            // inverse back
+            row = 7 - row;
+
+            // convert back to 1 based index
+            row++; column++;
+
+            // convert back to char and construct string
+            String parsedValue = Character.toString(column + 64) + row;
+            movesList.add(parsedValue);
+        }
+        return movesList;
     }
 }

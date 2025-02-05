@@ -4,6 +4,7 @@ import entities.Board;
 import entities.Piece;
 import entities.PieceType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,6 +19,10 @@ public class Pawn extends Piece {
 
     @Override
     public List<List<Integer>> calculatePossibleMoves(int x, int y, Board board) {
-        return null;
+        List<List<Integer>> possibleMoves = new ArrayList<>();
+        if (x - 1 >= 0) {
+            possibleMoves.add(List.of(x - 1, y));
+        }
+        return possibleMoves;
     }
 }

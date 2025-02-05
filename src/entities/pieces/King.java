@@ -44,7 +44,6 @@ public class King extends Piece {
         if (y - 1 >= 0 && x + 1 <= 7) {
             possibleMoves.add(List.of(x + 1, y - 1));
         }
-
         return possibleMoves;
     }
 
